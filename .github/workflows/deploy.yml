@@ -3,42 +3,56 @@ name: Deploy Hexo Blog
 on:
   push:
     branches:
-      - main # 当推送到 main 分支时触发
-  workflow_dispatch: # 允许手动触发
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 仓库
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true # 如果有子模块，自动拉取
+          submodules: 'recursive'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 设置 Node.js
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # 根据你的 Node.js 版本调整
-          cache: 'npm'
+          node-version: '18'
+          cache: 'pnpm'
 
-      - name: 安装依赖
+      - name: Install Dependencies
         run: |
-          npm install -g hexo-cli && npm i pnpm -g
-          pnpm i
+          pnpm install -g hexo-cli
+          pnpm install
 
-      - name: 生成静态文件
+      - name: Generate Static Files
         run: |
           hexo clean
           hexo generate
 
-      - name: 部署到 GitHub Pages
+      - name: Ensure .nojekyll
+        run: touch ./public/.nojekyll
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages # 部署到 gh-pages 分支
+          publish_branch: gh-pages
           force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'auto deploy: ${{ github.event.head_commit.message }}'
+          commit_message: '🚀 Deploy: ${{ github.event.head_commit.message }}'
