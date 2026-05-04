@@ -24,8 +24,8 @@ jobs:
 
       - name: 安装依赖
         run: |
-          npm install -g hexo-cli
-          npm install
+          npm install -g hexo-cli && npm i pnpm -g
+          pnpm i
 
       - name: 生成静态文件
         run: |
