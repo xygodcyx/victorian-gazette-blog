@@ -3,22 +3,38 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: XyGod
 subtitle: ''
 description: ''
-keywords:
-author: John Doe
-language: en
+keywords: 'quhou 屈侯 屈侯博客 xygodcyx xygod'
+author: 屈侯
+language:
+  - en
+  - zh-CN
+permalink: /:title/
 timezone: ''
+github_repo: https://github.com/xygodcyx/hexo-blog
+beian: 赣ICP备2026003720号
+
+langselect:
+  enable: true # If open, it will automatically generation lang-select button.This button can jump in articles in different languages, but the articles must have the same name.
+  options: # langselect button display options
+    en: English
+    zh-CN: 简体中文
+    # tw: 正體中文
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: http://quhou.top
+root: /
+# permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+debug: true
+logger: true
 
 # Directory
 source_dir: source
@@ -43,17 +59,27 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-syntax_highlighter: highlight.js
 highlight:
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
+  enable: true # 是否启用代码高亮
+  line_number: true # 显示行号
+  auto_detect: true # 自动检测语言
+  tab_replace: '  ' # 替换Tab为空格
   wrap: true
-  hljs: false
+  hljs: true
+
+# prism_plugin:
+#   mode: 'preprocess' # 预处理模式
+#   theme: 'vs' # 主题名
+#   line_number: true # 显示行号
+#   custom_css: false # 禁用默认CSS（主题自带样式时用）
+
+# syntax_highlight:
+#   enable: false
+#   theme: 'atom-one-dark' # 可选主题：github, solarized-light, etc
+#   line_number: true
+
 prismjs:
-  preprocess: true
-  line_number: true
-  tab_replace: ''
+  enable: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -89,9 +115,9 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+# include:
+# exclude:
+# ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -101,4 +127,32 @@ theme: victorian-gazette
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:xygodcyx/blog.git
+  branch: deploy
+
+server:
+  compress: true # 开启压缩
+
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+  plugins:
+    - markdown-it-container
+    # 你还可以加其他插件，例如：
+    # - markdown-it-task-lists
+    # - markdown-it-footnote
+    # - markdown-it-emoji
+
+marked:
+  escape: false
+
+search:
+  path: search.json
+  field: post
+  format: striptags
+  limit: 10000

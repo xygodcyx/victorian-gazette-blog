@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "dev": "hexo clean && hexo generate && hexo server",
+    "new": "node tools/new.js",
+    "build": "hexo clean && hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "hexo clean && hexo generate && hexo deploy",
     "server": "hexo server"
   },
   "hexo": {
@@ -13,6 +15,7 @@
   },
   "dependencies": {
     "hexo": "^8.0.0",
+    "hexo-filter-highlight": "^1.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^4.0.0",
