@@ -25,8 +25,8 @@ langselect:
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://quhou.top
-root: /
+url: https://xygodcyx.github.io
+root: /victorian-gazette-blog/
 # permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -115,8 +115,7 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-  - .nojekyll
+# include:
 # exclude:
 # ignore:
 
@@ -129,7 +128,7 @@ theme: victorian-gazette
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:xygodcyx/blog.git
+  repo: git@github.com:xygodcyx/victorian-gazette-blog.git
   branch: deploy
 
 server:
