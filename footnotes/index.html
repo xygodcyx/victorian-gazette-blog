@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en,zh-CN,default">
+  <head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>
+     脚注与参考文献 · XyGod 
+  </title>
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/style.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/post.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/paranote.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/marginalia.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/highlight.css"
+  />
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+    <div class="gazette">
+      <!-- 报头 -->
+<header class="masthead">
+  <h1 class="newspaper-title">
+    <a href="/victorian-gazette-blog/" style="color: inherit; text-decoration: none;">
+      QUHOU
+    </a>
+  </h1>
+  <div class="date-line">
+    ◆ 中国 · 2026-05-05 ◆ 每日号外
+  </div>
+</header>
+
+<!-- 导航 -->
+<nav class="nav-section">
+  <ul class="nav-list">
+    
+    
+    
+      
+      <li>
+        <a class="" href="/victorian-gazette-blog/">首页</a>
+      </li>
+    
+      
+      <li>
+        <a class="" href="/victorian-gazette-blog/tags/%E9%9A%8F%E7%AC%94">散文随笔</a>
+      </li>
+    
+      
+      <li>
+        <a class="" href="/victorian-gazette-blog/about">关于本刊</a>
+      </li>
+    
+    
+    <li>
+      <a class="" href="/victorian-gazette-blog/archives">档案室</a>
+    </li>
+  </ul>
+</nav> <div class="article-layout">
+
+  <!-- 左栏：作者信息 / 文章元数据 -->
+  <aside class="article-margin-left">
+    <div class="margin-widget">
+      <p class="margin-note">本文作者</p>
+      <p class="margin-note-em">屈侯</p>
+    </div>
+    <div class="margin-widget">
+      <p class="margin-note">出版日期</p>
+      <p class="margin-note-em">2026年5月2日</p>
+    </div>
+    <!-- 最后编辑日期：仅当文章修改过且与发布日期不同时显示 -->
+    
+    <div class="margin-widget">
+      <p class="margin-note">最后修订</p>
+      <p class="margin-note-em">2026年5月5日</p>
+    </div>
+    
+    
+    <div class="margin-widget">
+      <p class="margin-note">栏目</p>
+      <p class="margin-note-em">
+        
+          <a href="/victorian-gazette-blog/categories/%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%88%8A/">关于本刊</a>
+        
+      </p>
+    </div>
+    
+    
+    <div class="margin-widget">
+      <p class="margin-note">标签</p>
+      <div class="tag-cloud">
+        
+          <a href="/victorian-gazette-blog/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="tag">使用指南</a>
+        
+          <a href="/victorian-gazette-blog/tags/%E8%84%9A%E6%B3%A8/" class="tag">脚注</a>
+        
+          <a href="/victorian-gazette-blog/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" class="tag">参考文献</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+
+  <!-- 中栏：正文 -->
+  <article class="article-main">
+
+    <header class="article-header">
+      <h1 class="article-title">脚注与参考文献</h1>
+      
+        <p class="article-subtitle">维多利亚号外脚注系统的完整用法，涵盖引用标记、底部注释与双向跳转。</p>
+      
+    </header>
+
+    <div class="ornament-divider">
+      <button class="font-size-toggle" onclick="toggleFontSize()" title="切换正文字号">
+        字号<span class="font-size-hint" id="font-size-label">中</span>
+      </button>
+    </div>
+
+    <div class="article-body">
+      <div class="paranote-paragraph paranote-summary"><span class="paranote-marker">本文演示脚注系统的用法——在正文中为陌生术语或引用来源添加编号标记，于文末集中列出详细说明。</span>
+<span class="drop-cap">脚</span>注是学术写作与旧式报章中不可或缺的元素。本刊的脚注系统由两个标签配合完成：正文中的 <span class="marginalia-container"><span class="marginalia-term">引用标记</span><span class="marginalia-note">使用 {% fn %} 标签生成上标数字，点击跳转至文末注释。</span></span> 与文末的注释列表。读者可点击上标数字跳至注释，亦可点击注释末尾的回引符号返回正文。
+</div>
+
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>在正文中需要加注的词语后方插入 <code>&#123;% fn "1" "1" %&#125; </code>标签，然后在文末使用 <code>&#123;% fnitem %&#125;</code> 写出具体注释内容。维多利亚时代的学者们常在书籍页边或章末添加大量脚注<sup id="fnref:2"><a href="#fn:2" class="footnote-ref">[2]</a></sup>，有时注释的篇幅甚至超过正文本身。</p>
+<div class="paranote-paragraph paranote-citation"><span class="paranote-marker paranote-marker-left">此段参考了1892年版《大英百科全书》的脚注规范。</span></div>
+
+<h2 id="编号方式"><a href="#编号方式" class="headerlink" title="编号方式"></a>编号方式</h2><p>本刊支持两种编号方式：</p>
+<p><strong>语义化编号</strong>（推荐）——使用有意义的标签作为锚点 ID，方便日后查阅和维护：</p>
+<ul>
+<li>第一个参数为锚点 ID：<code>&#123;% fn "mcluhan" %&#125;</code></li>
+<li>第二个参数为显示的数字（可选）：<code>&#123;% fn "mcluhan" "①" %&#125;</code></li>
+</ul>
+<p>若省略第二个参数，则直接显示 ID。</p>
+<h2 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h2><p>麦克卢汉在其著作中提出了 <sup id="fnref:mcluhan"><a href="#fn:mcluhan" class="footnote-ref">[1]</a></sup> 媒介即讯息的理论，认为媒介本身的形式比其传递的内容更为重要。这一观点在广播时代得到了充分验证<sup id="fnref:broadcast"><a href="#fn:broadcast" class="footnote-ref">[2]</a></sup>。后来的学者进一步指出，数字时代的算法推荐彻底消灭了偶然性<sup id="fnref:algorithm"><a href="#fn:algorithm" class="footnote-ref">[3]</a></sup>——而这恰恰是传统媒介最珍贵的特质之一。</p>
+<div class="paranote-paragraph paranote-editorial"><span class="paranote-marker">编者按：以上三段分别引用了三位不同学者的观点，每处引用均附有脚注标号。</span></div>
+
+<h2 id="不带编号的脚注"><a href="#不带编号的脚注" class="headerlink" title="不带编号的脚注"></a>不带编号的脚注</h2><p>若只需在底部添加说明而不需要数字标记，可省略显示参数：</p>
+<p>维多利亚时期的印刷商<sup id="fnref:printer"><a href="#fn:printer" class="footnote-ref">[printer]</a></sup>通常会在书籍扉页印上精美的出版社徽章。</p>
+<div class="article-fin">❦</div>
+
+<hr class="footnotes-separator"><ol class="footnotes-list"><li id="fn:1">此处演示最基本的脚注格式——正文中标注 [1]，点击后跳转至此条注释。 <a href="#fnref:1" class="footnote-backref">↩</a></li>
+<li id="fn:2">在维多利亚时代，脚注常用于标注引文出处、补充说明或提供延伸阅读建议。一本严肃的学术著作往往含有数百条脚注。 <a href="#fnref:2" class="footnote-backref">↩</a></li>
+<li id="fn:mcluhan">马歇尔·麦克卢汉（Marshall McLuhan，1911-1980），加拿大媒介理论家，著有《理解媒介》。 <a href="#fnref:mcluhan" class="footnote-backref">↩</a></li>
+<li id="fn:broadcast">广播作为一种热媒介，在20世纪中期塑造了大众文化的信息接收方式。 <a href="#fnref:broadcast" class="footnote-backref">↩</a></li>
+<li id="fn:algorithm">指今日流媒体平台与社交网络的内容推荐算法，它们根据用户历史行为精准推送内容，减少了意外发现的可能性。 <a href="#fnref:algorithm" class="footnote-backref">↩</a></li>
+<li id="fn:printer">19世纪伦敦的印刷商行会拥有严格的准入制度，学徒需经过七年训练方可独立排版。 <a href="#fnref:printer" class="footnote-backref">↩</a></li></ol>
+
+    </div>
+
+    <!-- <div class="article-fin">❦</div> -->
+
+    <!-- 上下篇导航 -->
+    <nav class="article-nav">
+      
+        <a href="/victorian-gazette-blog/marginalia/" class="article-nav-prev">
+          ← 上一篇<br /><span>旁批的艺术</span>
+        </a>
+      
+      
+        <a href="/victorian-gazette-blog/showcase/" class="article-nav-next">
+          下一篇 →<br /><span>维多利亚号外 · 功能展示总览</span>
+        </a>
+      
+    </nav>
+  </article>
+
+<!-- 右栏：相关推荐 -->
+<aside class="article-margin-right">
+  <div class="margin-widget">
+    <p class="margin-note">相关文章</p>
+    <ul class="margin-list">
+      
+      
+      
+        <li>
+          <a href="/victorian-gazette-blog/details/">
+            折叠详情块
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/links/">
+            超链接与引用
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/marginalia/">
+            旁批的艺术
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/paranotes/">
+            段落旁注系统
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/showcase/">
+            维多利亚号外 · 功能展示总览
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+  <!-- 随机入口：确保孤岛文章也能被发现 -->
+  <div class="margin-widget">
+    <p class="margin-note">随便翻翻</p>
+    <ul class="margin-list">
+      
+        <li>
+          <a href="/victorian-gazette-blog/showcase/">
+            维多利亚号外 · 功能展示总览
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/details/">
+            折叠详情块
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</aside>
+</div>
+
+
+<section class="comments-section">
+  <h3 class="comments-heading">读者来信</h3>
+
+  <!-- 评论表单 -->
+  <div class="comment-form">
+    <h4 class="comment-form-title">✎ 投递您的来信</h4>
+    <div class="form-row">
+      <input type="text" placeholder="您的名讳" class="form-input" />
+      <input type="text" placeholder="电子邮箱（不会公开）" class="form-input" />
+    </div>
+    <textarea placeholder="在此书写您的想法……" class="form-textarea" rows="5"></textarea>
+    <button type="button" class="form-button">投递信件</button>
+    <span class="form-note">* 来信需经编辑审核后登载</span>
+  </div>
+</section>
+ <footer class="gazette-footer">
+  <p>
+    © 2026
+    <span class="gold-text">XyGod</span>
+    · Powered by Hexo &amp; 维多利亚号外主题
+  </p>
+  <!-- <p>所有文章均在烛光下手工排版 · 适配一切现代设备</p> -->
+</footer>
+
+    </div>
+    <script src="/victorian-gazette-blog/js/post-change-fontsize.js"></script>
+<script src="/victorian-gazette-blog/js/post-copy-button.js"></script>
+
+  </body>
+</html>

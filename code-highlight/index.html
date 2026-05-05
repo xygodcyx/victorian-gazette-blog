@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en,zh-CN,default">
+  <head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>
+     代码高亮与汇编之美 · XyGod 
+  </title>
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/style.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/post.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/paranote.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/marginalia.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/victorian-gazette-blog/css/highlight.css"
+  />
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+    <div class="gazette">
+      <!-- 报头 -->
+<header class="masthead">
+  <h1 class="newspaper-title">
+    <a href="/victorian-gazette-blog/" style="color: inherit; text-decoration: none;">
+      QUHOU
+    </a>
+  </h1>
+  <div class="date-line">
+    ◆ 中国 · 2026-05-05 ◆ 每日号外
+  </div>
+</header>
+
+<!-- 导航 -->
+<nav class="nav-section">
+  <ul class="nav-list">
+    
+    
+    
+      
+      <li>
+        <a class="" href="/victorian-gazette-blog/">首页</a>
+      </li>
+    
+      
+      <li>
+        <a class="" href="/victorian-gazette-blog/tags/%E9%9A%8F%E7%AC%94">散文随笔</a>
+      </li>
+    
+      
+      <li>
+        <a class="" href="/victorian-gazette-blog/about">关于本刊</a>
+      </li>
+    
+    
+    <li>
+      <a class="" href="/victorian-gazette-blog/archives">档案室</a>
+    </li>
+  </ul>
+</nav> <div class="article-layout">
+
+  <!-- 左栏：作者信息 / 文章元数据 -->
+  <aside class="article-margin-left">
+    <div class="margin-widget">
+      <p class="margin-note">本文作者</p>
+      <p class="margin-note-em">屈侯</p>
+    </div>
+    <div class="margin-widget">
+      <p class="margin-note">出版日期</p>
+      <p class="margin-note-em">2026年5月5日</p>
+    </div>
+    <!-- 最后编辑日期：仅当文章修改过且与发布日期不同时显示 -->
+    
+    <div class="margin-widget">
+      <p class="margin-note">最后修订</p>
+      <p class="margin-note-em">2026年5月5日</p>
+    </div>
+    
+    
+    <div class="margin-widget">
+      <p class="margin-note">栏目</p>
+      <p class="margin-note-em">
+        
+          <a href="/victorian-gazette-blog/categories/%E6%8A%80%E6%9C%AF%E8%80%83%E5%8F%A4/">技术考古</a>
+        
+      </p>
+    </div>
+    
+    
+    <div class="margin-widget">
+      <p class="margin-note">标签</p>
+      <div class="tag-cloud">
+        
+          <a href="/victorian-gazette-blog/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="tag">使用指南</a>
+        
+          <a href="/victorian-gazette-blog/tags/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/" class="tag">代码高亮</a>
+        
+          <a href="/victorian-gazette-blog/tags/%E6%B1%87%E7%BC%96/" class="tag">汇编</a>
+        
+          <a href="/victorian-gazette-blog/tags/TypeScript/" class="tag">TypeScript</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+
+  <!-- 中栏：正文 -->
+  <article class="article-main">
+
+    <header class="article-header">
+      <h1 class="article-title">代码高亮与汇编之美</h1>
+      
+        <p class="article-subtitle">维多利亚号外代码高亮系统的完整展示，涵盖多种编程语言、行号、复制按钮与羊皮纸底色。</p>
+      
+    </header>
+
+    <div class="ornament-divider">
+      <button class="font-size-toggle" onclick="toggleFontSize()" title="切换正文字号">
+        字号<span class="font-size-hint" id="font-size-label">中</span>
+      </button>
+    </div>
+
+    <div class="article-body">
+      <div class="paranote-paragraph paranote-summary"><span class="paranote-marker">本文展示代码高亮系统的各项功能——行号、语法着色、复制按钮以及移动端适配。示例代码涵盖汇编、TypeScript、Python 与 JSON。</span>
+<span class="drop-cap">本</span>刊的代码块以羊皮纸为底色、铜色细线为边框，四角饰以金色标记。行号列静默地列于左侧，代码则在右侧以等宽字体呈现。桌面端双列并排，移动端行号绝对定位，代码列可横向滚动。每个代码块右上角均有一个半透明的复制按钮，点击即可将代码复制至剪贴板。
+</div>
+
+<span id="more"></span>
+
+<h2 id="汇编语言"><a href="#汇编语言" class="headerlink" title="汇编语言"></a>汇编语言</h2><p>汇编是离机器最近的語言。以下是一段 x86 汇编，演示如何将数据移入寄存器与内存：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs asm">mov ax, 32h<br>mov bx, 1000h<br>mov ds, bx<br>mov [0], ax<br>add ax, 1<br>mov [1], ax<br>add ax, 1<br>mov [2], ax<br><br>mov ax, [0]<br>mov bx, [2]<br>mov cx, [1]<br>mov bx, [1]<br>mov cx, [2]<br></code></pre></td></tr></table></figure>
+
+<div class="paranote-paragraph paranote-citation"><span class="paranote-marker paranote-marker-left">此段汇编代码参考了王爽《汇编语言》第3版的示例，略有改动。</span></div>
+
+<h2 id="TypeScript-类型定义"><a href="#TypeScript-类型定义" class="headerlink" title="TypeScript 类型定义"></a>TypeScript 类型定义</h2><p>TypeScript 的联合类型与字面量类型非常适合描述具有多种变体的数据结构。以下示例定义了几何形状的类型：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">type</span> <span class="hljs-title class_">Circle</span> = &#123;<br>  <span class="hljs-attr">kind</span>: <span class="hljs-string">&#x27;circle&#x27;</span><br>  <span class="hljs-attr">radius</span>: <span class="hljs-built_in">number</span><br>&#125;<br><br><span class="hljs-keyword">type</span> <span class="hljs-title class_">Square</span> = &#123;<br>  <span class="hljs-attr">kind</span>: <span class="hljs-string">&#x27;square&#x27;</span><br>  <span class="hljs-attr">sideLength</span>: <span class="hljs-built_in">number</span><br>&#125;<br><br><span class="hljs-keyword">type</span> <span class="hljs-title class_">Shape</span> = <span class="hljs-title class_">Circle</span> | <span class="hljs-title class_">Square</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">area</span>(<span class="hljs-params"><span class="hljs-attr">shape</span>: <span class="hljs-title class_">Shape</span></span>): <span class="hljs-built_in">number</span> &#123;<br>  <span class="hljs-keyword">switch</span> (shape.<span class="hljs-property">kind</span>) &#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;circle&#x27;</span>:<br>      <span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span> * shape.<span class="hljs-property">radius</span> ** <span class="hljs-number">2</span><br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;square&#x27;</span>:<br>      <span class="hljs-keyword">return</span> shape.<span class="hljs-property">sideLength</span> ** <span class="hljs-number">2</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Python-文本处理"><a href="#Python-文本处理" class="headerlink" title="Python 文本处理"></a>Python 文本处理</h2><p>Python 简洁的语法使其成为处理文本的首选工具。以下代码统计了一段维多利亚时代文本中的词频：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter<br><br>text = <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">The fog crept along the cobblestone streets,</span><br><span class="hljs-string">wrapping the gas lamps in a yellow haze.</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br>words = re.findall(<span class="hljs-string">r&#x27;\b\w+\b&#x27;</span>, text.lower())<br>word_count = Counter(words)<br><br><span class="hljs-keyword">for</span> word, count <span class="hljs-keyword">in</span> word_count.most_common(<span class="hljs-number">5</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;word&#125;</span>: <span class="hljs-subst">&#123;count&#125;</span>&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<h2 id="JSON-配置文件"><a href="#JSON-配置文件" class="headerlink" title="JSON 配置文件"></a>JSON 配置文件</h2><p>本刊主题的配置文件以 JSON 格式存储，以下为侧边栏配置的简化示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;sidebar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;bio&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;千禧年幸存者 · 数字考古学家&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;badge_text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;烛光排版认证&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;links&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;老猫的静默花园&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://example.com&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;CD旋转岁月&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://example.com&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><br>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;fonts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>    <span class="hljs-string">&quot;Playfair Display&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;Cormorant Garamond&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;UnifrakturMaguntia&quot;</span><br>  <span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<div class="paranote-paragraph paranote-editorial"><span class="paranote-marker">编者按：以上四种语言分别代表了底层硬件、类型系统、文本处理与数据配置四个领域。本刊的代码高亮配色经过精心调校——关键字为勃艮第红，字符串为深棕，注释为灰褐斜体，全以暖色调呈现。</span></div>
+
+<h2 id="移动端效果"><a href="#移动端效果" class="headerlink" title="移动端效果"></a>移动端效果</h2><p>在手机屏幕上，代码块的行号列会自动缩窄，代码字号适当减小，确保在小屏设备上依然可以舒适阅读。行号在极窄屏幕上会被隐藏，以最大化代码显示区域。</p>
+
+    </div>
+
+    <!-- <div class="article-fin">❦</div> -->
+
+    <!-- 上下篇导航 -->
+    <nav class="article-nav">
+      
+        <a href="/victorian-gazette-blog/links/" class="article-nav-prev">
+          ← 上一篇<br /><span>超链接与引用</span>
+        </a>
+      
+      
+        <a href="/victorian-gazette-blog/paranotes/" class="article-nav-next">
+          下一篇 →<br /><span>段落旁注系统</span>
+        </a>
+      
+    </nav>
+  </article>
+
+<!-- 右栏：相关推荐 -->
+<aside class="article-margin-right">
+  <div class="margin-widget">
+    <p class="margin-note">相关文章</p>
+    <ul class="margin-list">
+      
+      
+      
+        <li>
+          <a href="/victorian-gazette-blog/details/">
+            折叠详情块
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/footnotes/">
+            脚注与参考文献
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/links/">
+            超链接与引用
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/marginalia/">
+            旁批的艺术
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/paranotes/">
+            段落旁注系统
+            <!-- 
+              <span style="font-size:0.7em; color:var(--accent-gold);">★</span>
+             -->
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+  <!-- 随机入口：确保孤岛文章也能被发现 -->
+  <div class="margin-widget">
+    <p class="margin-note">随便翻翻</p>
+    <ul class="margin-list">
+      
+        <li>
+          <a href="/victorian-gazette-blog/paranotes/">
+            段落旁注系统
+          </a>
+        </li>
+      
+        <li>
+          <a href="/victorian-gazette-blog/footnotes/">
+            脚注与参考文献
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</aside>
+</div>
+
+
+<section class="comments-section">
+  <h3 class="comments-heading">读者来信</h3>
+
+  <!-- 评论表单 -->
+  <div class="comment-form">
+    <h4 class="comment-form-title">✎ 投递您的来信</h4>
+    <div class="form-row">
+      <input type="text" placeholder="您的名讳" class="form-input" />
+      <input type="text" placeholder="电子邮箱（不会公开）" class="form-input" />
+    </div>
+    <textarea placeholder="在此书写您的想法……" class="form-textarea" rows="5"></textarea>
+    <button type="button" class="form-button">投递信件</button>
+    <span class="form-note">* 来信需经编辑审核后登载</span>
+  </div>
+</section>
+ <footer class="gazette-footer">
+  <p>
+    © 2026
+    <span class="gold-text">XyGod</span>
+    · Powered by Hexo &amp; 维多利亚号外主题
+  </p>
+  <!-- <p>所有文章均在烛光下手工排版 · 适配一切现代设备</p> -->
+</footer>
+
+    </div>
+    <script src="/victorian-gazette-blog/js/post-change-fontsize.js"></script>
+<script src="/victorian-gazette-blog/js/post-copy-button.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,259 @@
+/* ==========================================
+   维多利亚号外 · 代码高亮（Flex布局，彻底对齐）
+   ========================================== */
+
+/* 外层容器 */
+.article-body figure.highlight {
+  margin: 1.5em 0;
+  border: 1px solid var(--border-ornate);
+  border-radius: 4px;
+  background: #fdfaf3;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 装饰角 */
+.article-body figure.highlight::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  border-top: 1px solid var(--accent-gold);
+  border-left: 1px solid var(--accent-gold);
+  opacity: 0.5;
+  z-index: 2;
+}
+.article-body figure.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  border-bottom: 1px solid var(--accent-gold);
+  border-right: 1px solid var(--accent-gold);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+/* 干掉表格，用 flex */
+.article-body figure.highlight table,
+.article-body figure.highlight tbody,
+.article-body figure.highlight tr {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.article-body figure.highlight td {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  vertical-align: top;
+}
+
+/* 行号列 */
+.article-body figure.highlight td.gutter {
+  flex-shrink: 0;
+  width: auto;
+  background: rgba(191, 155, 78, 0.06);
+  border-right: 1px solid rgba(196, 173, 124, 0.3);
+  user-select: none;
+}
+
+.article-body figure.highlight td.gutter pre {
+  margin: 0;
+  padding: 1em 0.6em;
+  border: none;
+  background: transparent;
+  color: #b8a88a;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* 代码列 */
+.article-body figure.highlight td.code {
+  flex-grow: 1;
+  overflow-x: auto;
+}
+
+.article-body figure.highlight td.code pre {
+  margin: 0;
+  padding: 1em 1.2em;
+  border: none;
+  background: transparent;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #3a3022;
+  white-space: pre;
+}
+
+/* code 内的 span 保持 inline */
+.article-body figure.highlight td.code code {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* 行内 code（非代码块） */
+.article-body > p code,
+.article-body li code,
+.article-body > div code:not(.hljs) {
+  background: rgba(191, 155, 78, 0.08);
+  border: 1px solid rgba(196, 173, 124, 0.4);
+  border-radius: 3px;
+  padding: 0.15em 0.4em;
+  font-size: 0.85em;
+  color: var(--accent-darkred);
+}
+
+/* 高亮颜色 */
+.hljs-comment,
+.hljs-quote {
+  color: #8b7d6b;
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #8b2e2e;
+  font-weight: bold;
+}
+.hljs-string,
+.hljs-addition {
+  color: #5c4a2e;
+}
+.hljs-number,
+.hljs-literal {
+  color: #6b4e3d;
+}
+.hljs-title,
+.hljs-section,
+.hljs-name {
+  color: #6b3a3a;
+}
+.hljs-attr,
+.hljs-attribute {
+  color: #7a5a3a;
+}
+.hljs-variable,
+.hljs-template-variable {
+  color: #8b4513;
+}
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #4a6b4a;
+}
+.hljs-regexp {
+  color: #8b6b3a;
+}
+.hljs-link {
+  color: #6b4a2e;
+  text-decoration: underline;
+}
+.hljs-deletion {
+  color: #8b2e2e;
+  background: rgba(139, 46, 46, 0.08);
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: bold;
+}
+.hljs-tag {
+  color: #6b4a3a;
+}
+.hljs-selector-class {
+  color: #7a4a3a;
+}
+.hljs-selector-id {
+  color: #8b3a3a;
+}
+.hljs-params {
+  color: #5a4a3a;
+}
+.hljs-meta {
+  color: #6b5d44;
+}
+.hljs-symbol,
+.hljs-bullet {
+  color: #8b6b3a;
+}
+
+/* ----- 复制按钮 ----- */
+.article-body figure.highlight {
+  position: relative; /* 已存在，确保是定位父元素 */
+}
+
+.copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 3;
+  background: #fdfaf3;
+  border: 1px solid var(--border-ornate);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2em 0.6em;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all var(--transition-smooth);
+  border-radius: 2px;
+  line-height: 1.4;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+  color: var(--accent-darkred);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-gold);
+}
+
+.copy-btn.copied {
+  background: var(--accent-gold);
+  color: #fff;
+  border-color: var(--accent-gold);
+  opacity: 1;
+}
+
+/* ----- 移动端调整 ----- */
+@media (max-width: 768px) {
+  .article-body figure.highlight td.gutter pre {
+    padding: 0.8em 0.3em;
+    font-size: 0.75rem;
+  }
+  .article-body figure.highlight td.code pre {
+    padding: 0.8em 0.6em;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-body figure.highlight td.gutter pre {
+    padding: 0.8em 0.2em;
+    font-size: 0.7rem;
+  }
+  .article-body figure.highlight td.code pre {
+    padding: 0.8em 0.4em;
+    font-size: 0.7rem;
+  }
+}
